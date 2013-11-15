@@ -17,7 +17,7 @@ class AuditedModel(models.Model):
 class Post(AuditedModel):
     title = models.CharField(max_length=50, unique=True)
     img = models.ImageField(upload_to='media/')
-    content = models.CharField(max_length=50000)
+    content = models.TextField(max_length=50000)
     slug = models.SlugField(max_length=100, blank=True)
 
     def save(self, *args, **kwargs):

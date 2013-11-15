@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     # Examples:
-    url(r'^$', 'views.IndexView.as_view()', name='index'),
+    url(r'^$', views.IndexView.as_view(), name='index'),
     # url(r'^blog_django/', include('blog_django.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -19,5 +19,5 @@ urlpatterns = patterns(
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'(?P<slug>[/w/-]+)/$', views.PostView.as_view(), name='post'),
+    url(r'(?P<slug>[^/]+)/$', views.PostView.as_view(), name='post'),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

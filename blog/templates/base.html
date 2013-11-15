@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!-- Con la linea de arriba cargamos los estaticos de Django -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>La Valdi Blog</title>
+	<!-- Esta es la forma en que llamamos los archivos que se encuentran en la carpeta estatica -->
+	<link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>
+		<h1>
+			<a href="/">
+				La Valdi Blog
+			</a> 
+		</h1>
+		<figure>
+			<a href="http://clmdevelopers.com" target="_blank">
+				<img src="{% static "img/clmdevlogo.jpg" %}" alt="CLM Developers">
+			</a>
+		</figure>
+		<figure>
+			<a href="https://github.com/lavaldi" target="_blank">
+				<img src="{% static "img/github.png" %}" alt="Github">
+			</a>
+		</figure>
+		<figure>
+			<a href="https://twitter.com/lavaldi_" target="_blank">
+				<img src="{% static "img/twitter.png" %}" alt="Twitter">
+			</a>
+		</figure>
+		<figure>
+			<a href="https://facebook.com/geekandchristian" target="_blank">
+				<img src="{% static "img/facebook.png" %}" alt="La Valdi Fanpage">
+			</a>
+		</figure>
+	</header>
+	<section class="container">
+		{% block content %}
+			<!-- Aqui es donde van a ir contenidos index.html y post.html -->
+		{% endblock %}
+	</section>
+</body>
+</html>

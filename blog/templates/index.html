@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+<!-- Con la linea superior es como llamamos al archivo base (extendemos el archivo base) -->
+{% block content %}
+    <!-- a continuacion traemos todos los elementos del modelo como definimos en las views y los recorremos uno a uno -->
+    {% for Post in posts %}
+        <figure>
+            <!-- De la siguiente forma traemos los archivos que estan en la carpeta media -->
+            <!-- Y jalamos la imagen del Post -->
+            <img class="img-post" src="{{ MEDIA_URL }}{{ Post.img }}">
+        </figure>
+        <section class="content">
+            <h2>{{ Post.title }}</h2>
+            <h3>{{Post.created}}</h3>
+            <a class="button" href={{ Post.slug }}> Ver más </a>
+        </section>
+    {% endfor %}
+{% endblock %}
